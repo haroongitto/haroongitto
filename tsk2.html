@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app="taskmanagerapp">
+
+<head>
+  <title>To-Do List</title>
+   
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('data:image/jpeg;base64,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');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.7); /* Adding a semi-transparent white background to improve readability */
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 70%;
+      padding: 8px;
+      margin-right: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      outline: none;
+    }
+
+    button {
+      padding: 8px 12px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: #999;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div ng-controller="ToDoController" class="container">
+    <h1>My To-Do List</h1>
+    <input type="text" ng-model="newTask" placeholder="Enter a new task">
+    <button ng-click="addTask()">Add Task</button>
+    <button ng-click="clearCompleted()">Clear Completed</button>
+    <br>
+    <label>
+      <input type="checkbox" ng-model="showCompleted"> Show Completed Tasks
+    </label>
+    <ul>
+      <li ng-repeat="task in filteredTasks()">
+        <input type="checkbox" ng-model="task.completed" ng-change="toggleCompleted(task)">
+        <span ng-class="{completed: task.completed}">
+          {{task.description}}
+        </span>
+        <button ng-click="deleteTask($index)">Delete</button>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    var app = angular.module('ToDoApp', []);
+    app.controller('ToDoController', function ($scope) {
+      $scope.tasks = [];
+
+      $scope.addTask = function () {
+        if ($scope.newTask) {
+          $scope.tasks.push
+          ({
+            description: $scope.newTask,
+            completed: false
+          });
+          $scope.newTask = "";
+        }
+      };
+
+      $scope.deleteTask = function (index) {
+        $scope.tasks.splice(index, 1);
+      };
+
+      $scope.toggleCompleted = function (task) {
+        task.completed = !task.completed;
+      };
+
+      $scope.clearCompleted = function () {
+        $scope.tasks = $scope.tasks.filter(function (task) {
+          return !task.completed;
+        });
+      };
+
+      $scope.filteredTasks = function () {
+        if ($scope.showCompleted) {
+          return $scope.tasks;
+        } else {
+          return $scope.tasks.filter(function (task) {
+            return !task.completed;
+          });
+        }
+      };
+    });
+  </script>
+
+</body>
+
+</html>
